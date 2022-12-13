@@ -13,6 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('main');
+    $title = '';
+    return view('layouts/main', [
+        "title" => $title
+    ]);
+});
+
+Route::get('/home', function(){
+    return view('home', [
+        "title" => "Page Home"
+    ]);
+});
+
+Route::get('/about', function(){
+    return view('about', [
+        "title" => "Page About",
+        "author" => "Hendri"
+    ]);
 });
